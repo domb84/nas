@@ -34,6 +34,24 @@
 # 15: LCD Backlight +5V**
 # 16: LCD Backlight GND
 
+
+# The wiring for the Teac T-H300DABmkII LCD is as follows:
+# 1 : GND (BLACK WIRE)
+# 2 : 5V
+# 3 : NOT USED
+# 4 : GPIO 7
+# 5 : GND
+# 6 : GPIO 8
+# 7 : NOT USED
+# 8 : NOT USED
+# 9 : NOT USED
+# 10: NOT USED
+# 11: GPIO 25
+# 12: GPIO 24
+# 13: GPIO 23
+# 14: GPIO 15
+
+
 # import
 import RPi.GPIO as GPIO
 import time
@@ -44,7 +62,7 @@ LCD_E = 8
 LCD_D4 = 25
 LCD_D5 = 24
 LCD_D6 = 23
-LCD_D7 = 18
+LCD_D7 = 15
 
 # Define some device constants
 LCD_WIDTH = 16  # Maximum characters per line
@@ -78,25 +96,25 @@ def main():
         lcd_string("Rasbperry Pi", LCD_LINE_1)
         lcd_string("16x2 LCD Test", LCD_LINE_2)
 
-        time.sleep(3)  # 3 second delay
+        time.sleep(1)  # 3 second delay
 
         # Send some text
         lcd_string("1234567890123456", LCD_LINE_1)
         lcd_string("abcdefghijklmnop", LCD_LINE_2)
 
-        time.sleep(3)  # 3 second delay
+        time.sleep(1)  # 3 second delay
 
         # Send some text
         lcd_string("RaspberryPi-spy", LCD_LINE_1)
         lcd_string(".co.uk", LCD_LINE_2)
 
-        time.sleep(3)
+        time.sleep(1)
 
         # Send some text
         lcd_string("Follow me on", LCD_LINE_1)
         lcd_string("Twitter @RPiSpy", LCD_LINE_2)
 
-        time.sleep(3)
+        time.sleep(1)
 
 
 def lcd_init():
